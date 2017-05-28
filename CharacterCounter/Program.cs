@@ -39,9 +39,12 @@ namespace CharacterCounter
             string numberOfArguments = Console.ReadLine();
             Console.WriteLine();
 
+            /// <summary>
+            /// Check that the correct amount has been entered
+            /// </summary>
             if (!Int32.TryParse(numberOfArguments, out int numberOfArgumentsInt) || numberOfArgumentsInt <= 0)
             {
-                Console.WriteLine(Environment.NewLine + "Incorrect data entered");
+                Console.WriteLine(Environment.NewLine + "Incorrect data entered"); 
                 System.Threading.Thread.Sleep(200);
                 Console.WriteLine("{0}{1}{0}", Environment.NewLine, horizontalLine);
                 System.Threading.Thread.Sleep(200);
@@ -51,6 +54,9 @@ namespace CharacterCounter
                 return;
             }
 
+            /// <summary>
+            /// Data capture for analysis
+            /// </summary>
             List<string> listOfArguments = new List<string>();
 
             for (int i = 1; i <= numberOfArgumentsInt; i++)
@@ -60,6 +66,9 @@ namespace CharacterCounter
             }
             Console.WriteLine();
 
+            /// <summary>
+            /// Counting signs
+            /// </summary>
             Dictionary<char, int> dictionary = new Dictionary<char, int>();
 
             foreach (var currentArgument in listOfArguments)
@@ -81,12 +90,18 @@ namespace CharacterCounter
                 }
             }
 
+            /// <summary>
+            /// Character analysis, checking whether is it the number or letter or special character etc.
+            /// </summary>
             var list = dictionary.Keys.ToList();
             list.Sort();
             int allCharacters = 0, letters = 0, numbers = 0, specialSigns = 0;
 
             foreach (var character in list)
             {
+                /// <summary>
+                /// Output the result, first part
+                /// </summary>
                 Console.WriteLine("Sign \'{0}\' - number of repetitions: {1}", character, dictionary[character]);
                 allCharacters += dictionary[character];
                 if(Char.IsLetter(character))
@@ -103,6 +118,9 @@ namespace CharacterCounter
                 }
             }
 
+            /// <summary>
+            /// Output the result, second part
+            /// </summary>
             Console.WriteLine("{0}All characters: {1}", Environment.NewLine, allCharacters);
             Console.WriteLine("Letters: {0}", letters);
             Console.WriteLine("Numbers: {0}", numbers);
