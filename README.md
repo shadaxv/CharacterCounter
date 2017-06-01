@@ -11,7 +11,7 @@ Simple character counter written in C#
     
 ## Release History
 
-* 1.0.4
+* 1.0.3
     * Added comments, release 
 * 1.0.2
     * Added README.md
