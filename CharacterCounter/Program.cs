@@ -10,12 +10,10 @@ namespace CharacterCounter
         public static void Main(string[] args)
         {
             string horizontalLine = new string('═', 60);
+            string version = "v. 1.0.3";
             Console.WriteLine("{0}{1}", Environment.NewLine, horizontalLine);
-            System.Threading.Thread.Sleep(200);
-            Console.WriteLine("═══════════════  Character Counter - v. 1.0  ═══════════════");
-            System.Threading.Thread.Sleep(200);
+            Console.WriteLine("══════════════  Character Counter - {0}  ══════════════", version);
             Console.WriteLine("{1}{0}", Environment.NewLine, horizontalLine);
-            System.Threading.Thread.Sleep(200);
             CharacterCounter.CharacterCounterVoid();
         }
 
@@ -45,9 +43,7 @@ namespace CharacterCounter
             if (!Int32.TryParse(numberOfArguments, out int numberOfArgumentsInt) || numberOfArgumentsInt <= 0)
             {
                 Console.WriteLine(Environment.NewLine + "Incorrect data entered"); 
-                System.Threading.Thread.Sleep(200);
                 Console.WriteLine("{0}{1}{0}", Environment.NewLine, horizontalLine);
-                System.Threading.Thread.Sleep(200);
 
                 Console.WriteLine("Press any key to continue . . .");
                 Console.ReadKey();
@@ -126,9 +122,7 @@ namespace CharacterCounter
             Console.WriteLine("Numbers: {0}", numbers);
             Console.WriteLine("Special signs: {0}", specialSigns);
 
-            System.Threading.Thread.Sleep(200);
             Console.WriteLine("{0}{1}{0}", Environment.NewLine, horizontalLine);
-            System.Threading.Thread.Sleep(200);
 
             Console.WriteLine("Press any key to continue . . .");
             Console.ReadKey();
